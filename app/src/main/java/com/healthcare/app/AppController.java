@@ -11,8 +11,13 @@ public class AppController {
         return "index";
     }
 
+    @GetMapping("/login")
+    public String getLogin() {
+        return "login";
+    }
+
     @GetMapping("*")
     public String redirectToIndex() {
-        return "redirect:/";
+        return "redirect:/login";
     }
 }

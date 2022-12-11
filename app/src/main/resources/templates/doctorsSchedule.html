@@ -8,20 +8,12 @@
     </head>
 
     <body>
-        <h1>All Doctors at our Facility !</h1>
+        <h1>Doctors Available This Week!</h1>
         <ul>
-            <li th:each="doctor : ${doctorList}">
+            <li th:each="doctor : ${doctorSchedule}">
                 <a th:href="@{doctors/{item} (item=${doctor.name})}" th:text="${doctor.name} + ' (field ' + ${doctor.field} + ')'">hero</a>
             </li>
         </ul>
-        <!--This add doctor should be admin feature-->
-        <form method="post" action="/doctors">
-            <input type="text" id="doctor" name="doctorName" placeholder="new doctor name..." required>
-            <button>Add New Doctor</button>
-        </form>
-        <form method="get" action="/doctorsSchedule">
-            <button>Check Schedule</button>
-        </form>
         <form method="get" action="/">
             <button>Back</button>
         </form>
