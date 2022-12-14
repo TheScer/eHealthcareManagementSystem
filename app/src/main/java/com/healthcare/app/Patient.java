@@ -23,6 +23,6 @@ public class Patient extends AbstractPersistable<Long> {
     public Patient(String firstName) {
         this.fName = firstName;
         this.status = "unhealthy";
-
     }
+
 }
