@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Patient extends AbstractPersistable<Long> {
-    private String fName;
-    private String lName;
-    private String status;
+    private String fName; // patient first name
+    private String lName; // patient last name
+    private String status; // patient health status
     private int age;
     private Date birthDate;
 
