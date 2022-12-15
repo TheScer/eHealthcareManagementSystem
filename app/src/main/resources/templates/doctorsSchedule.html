@@ -11,7 +11,7 @@
         <h1>Doctors Available This Week!</h1>
         <ul>
             <li th:each="doctor : ${doctorSchedule}">
-                <a th:href="@{doctors/{item} (item=${doctor.name})}" th:text="${doctor.name} + ' (field ' + ${doctor.field} + ')'">hero</a>
+                <a th:href="@{doctors/{item} (item=${doctor.name})}" th:text="${doctor.name} + ' (field ' + ${doctor.field} + ')'"></a>
             </li>
         </ul>
         <form method="get" action="/">

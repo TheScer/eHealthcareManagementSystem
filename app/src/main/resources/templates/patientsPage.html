@@ -13,7 +13,7 @@
             <li th:each="patient : ${patientList}">
                 <a th:href="@{patients/{item} (item=${patient.fName})}" 
                 th:text="${patient.fName} + ' (status: ' +${patient.status} + ')'"
-                >hero</a>
+                ></a>
             </li>
         </ul>
         <!--This add patient should be admin feature-->
