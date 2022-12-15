@@ -36,4 +36,8 @@ public class DoctorService {
         return freeDoctors;
     }
 
+    public void addDoctor(Doctor doc){
+        this.doctors.add(doc);
+    }
+
 }

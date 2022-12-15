@@ -43,7 +43,7 @@ public class Doctor extends AbstractPersistable<Long>{
         if(this.appointment == true) {
             System.out.println("Cancelling Appointment");
             this.appointment = false;
-        }
+        } 
         else{
             System.out.println("No appointment anyway");
         }

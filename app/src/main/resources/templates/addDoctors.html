@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Admin Access Only! - Add Doctors</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <h1>All Doctor Info here!</h1>
+        <form method="post" action="/doctors">
+            <label for="name">Full name:</label><br>
+            <input type="text" id="name" name="name" ><br>
+            <label for="field">Field:</label><br>
+            <input type="text" id="field" name="field" ><br>
+            <label for="contact">Contact Number:</label><br>
+            <input type="number" id="contact" name="contact" ><br><br>
+            <label for="schedule">Schedule: 0 For TTS, 1 For MWF</label><br>
+            <input type="number" id="schedule" name="schedule" ><br><br>
+            <label for="appointment">Free for Appointment: 0 mean Free, 1 means Not Free</label><br>
+            <input type="number" id="appointment" name="appointment" ><br><br>
+            <button>Add Doctor</button>
+          </form> 
+        <form method="get" action="/">
+            <button>Back</button>
+        </form>
+    </body>
+</html>
