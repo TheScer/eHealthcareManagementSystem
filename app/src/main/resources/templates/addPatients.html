@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Admin Access Only! - Add Patients</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <h1>Input All Patient Info here!</h1>
+        <form method="post" action="/patients">
+            <label for="first name">First name:</label><br>
+            <input type="text" id="firstName" name="fName" required><br>
+
+            <label for="last name">Last name:</label><br>
+            <input type="text" id="lastName" name="lName" required><br>
+
+            <label for="status">Status:</label><br>
+            <input type="text" id="status" name="status" required><br><br>
+
+            <label for="birthDate">birth Date:</label><br>
+            <input type="date" id="birth Date" name="birthDate" required><br><br>
+
+            <label for="symptoms">Symptoms</label><br>
+            <input type="text" id="symptoms" name="symptoms" required ><br><br>
+
+            <button>Add Patient</button>
+          </form> 
+        <form method="get" action="/">
+            <button>Back</button>
+        </form>
+    </body>
+</html>

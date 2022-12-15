@@ -34,4 +34,8 @@ public class PatientService {
         return patients.get(0);
     }
 
+    public void addPatient(Patient pat) {
+        this.patients.add(pat);
+    }
+
 }

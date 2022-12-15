@@ -10,10 +10,15 @@
     <body>
         <h1>MyPatient Info</h1>
             <h2 th:text="${patient.fName}">fName</h2>
+            <h2 th:text="${patient.lName}"></h2>
             <h3 th:text="${patient.status}">status</h3>
+            <h4 th:text="${patient.symptoms}"></h4>
+            <h4 th:text="${patient.birthDate}"></h4>
+
         <form method="get" action="/doctorsSchedule">
-            <button>Check Doctors available</button>
+            <button>Book Appointment</button>
         </form>
+
         <form method="get" action="/">
             <button>Back</button>
         </form>
