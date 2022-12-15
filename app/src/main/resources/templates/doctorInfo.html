@@ -9,21 +9,25 @@
 
     <body>
         <h1>Doctor Info here!</h1>
-        <h2 th:text="${doctor.name}">Name</h2>
-        <h2 th:text="${doctor.field}">Field</h2>
-        <ul>
+            <p>Name: <strong th:text="${doctor.name}"></strong></p>
+            <p>Field: <strong th:text="${doctor.field}"></strong></p>
+            <ul>
+                <li>
+                    Contact <strong th:text="${doctor.contactNumber}"></strong>
+                </li>
             <li>
-                <h4 th:text="${doctor.contactNumber}">Field</h4>
+                Schedule <strong th:text="${doctor.schedule}">Field</strong>
             </li>
             <li>
-                <h4 th:text="${doctor.schedule}">Field</h4>
+                Appointment <strong th:text="${doctor.appointment}">Field</strong>
             </li>
-            <li>
-                <h4 th:text="${doctor.appointment}">Field</h4>
-            </li>
-        </ul>
-
-        <form method="get" action="/doctors">
+            </ul>
+        <form method="post" action="/bookDoctor">
+            <label for="name">Enter Doctor Name to confirm booking:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <button>Book</button>
+          </form> 
+        <form method="get" action="/">
             <button>Back</button>
         </form>
     </body>

@@ -17,7 +17,7 @@ public class Doctor extends AbstractPersistable<Long>{
     private String field;           // what specialisation the doctor has
     private String contactNumber;
     private Boolean schedule;       // false means TTS, true means MWF 
-    private Boolean appointment;    // false means free, true means booked
+    private Boolean appointment;    // false means not free, true means free
 
     public Doctor(String name){
         this.name = name;
@@ -26,16 +26,16 @@ public class Doctor extends AbstractPersistable<Long>{
         this.schedule = true;
     }
 
-    public Boolean scheduleStatus(){
-        return this.schedule;
+    public Boolean appointmentStatus(){
+        return this.appointment;
     }
 
     public void fixAppointment(){
-        if(this.appointment == true) {
+        if(this.appointment == false) {
             System.out.println("Already booked try another doctor");
         }
         else{
-            this.appointment = true;
+            this.appointment = false;
         }
     }
 

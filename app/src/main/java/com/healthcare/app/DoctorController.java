@@ -2,21 +2,24 @@ package com.healthcare.app;
 
 import java.util.ArrayList;
 
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.source.ConfigurationPropertyName.Form;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.fasterxml.jackson.datatype.jsr310.deser.InstantDeserializer.FromDecimalArguments;
 
 @Controller
 public class DoctorController {
 
     @Autowired
     private DoctorService doctorService;
-
-    private PatientService patientService;
 
     @GetMapping("/doctors")
     public String getDoctors(Model model){
@@ -32,8 +35,16 @@ public class DoctorController {
         return "redirect:/doctors";
     }
 
+    @PostMapping("/bookDoctor")
+    public String bookDoctor(@RequestParam String name){
+        Doctor doc = doctorService.findDocByName(name);
+        doc.fixAppointment();
+        return "redirect:/doctors";
+    }
+
+
     @GetMapping("/doctors/{name}")
-    public String getHeroInfo(@PathVariable String name, Model model) {
+    public String getDoctorInfo(@PathVariable String name, Model model) {
         Doctor doc = doctorService.findDocByName(name);
         model.addAttribute("doctor", doc);
         return "doctorInfo";
@@ -41,7 +52,7 @@ public class DoctorController {
 
     @GetMapping("/doctorsSchedule")
     public String getSchedule(Model model){
-        ArrayList<Doctor> scheduleList = doctorService.getSchedule();
+        ArrayList<Doctor> scheduleList = doctorService.getAppointment();
         model.addAttribute("doctorSchedule", scheduleList);
         return "doctorsSchedule";
     }
@@ -50,5 +61,4 @@ public class DoctorController {
     public String addPage(){
         return "addDoctors";
     }
-
 }

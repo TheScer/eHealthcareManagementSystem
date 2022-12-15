@@ -26,10 +26,10 @@ public class DoctorService {
         return this.doctors;
     }
 
-    public ArrayList<Doctor> getSchedule() {
+    public ArrayList<Doctor> getAppointment() {
         ArrayList<Doctor> freeDoctors = new ArrayList<>();
         for (Doctor doctor : doctors) {
-            if (doctor.scheduleStatus()) {
+            if (doctor.appointmentStatus()) {
                 freeDoctors.add(doctor);
             }
         }
