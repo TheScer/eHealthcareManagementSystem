@@ -40,4 +40,13 @@ public class DoctorService {
         this.doctors.add(doc);
     }
 
+    public Doctor findDocByName(String name) {
+        for (Doctor doc : this.doctors) {
+            if (doc.getName().equals(name)) {
+                return doc;
+            }
+        }
+        return doctors.get(0);
+    }
+
 }

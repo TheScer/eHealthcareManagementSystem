@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -15,7 +16,7 @@ public class DoctorController {
     @Autowired
     private DoctorService doctorService;
 
-    //private PatientService patientService;
+    private PatientService patientService;
 
     @GetMapping("/doctors")
     public String getDoctors(Model model){
@@ -29,6 +30,13 @@ public class DoctorController {
         Doctor doc = new Doctor(name, field, contact, schedule, appointment); 
         doctorService.addDoctor(doc);
         return "redirect:/doctors";
+    }
+
+    @GetMapping("/doctors/{name}")
+    public String getHeroInfo(@PathVariable String name, Model model) {
+        Doctor doc = doctorService.findDocByName(name);
+        model.addAttribute("doctor", doc);
+        return "doctorInfo";
     }
 
     @GetMapping("/doctorsSchedule")
