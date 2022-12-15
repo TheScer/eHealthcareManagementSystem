@@ -11,15 +11,15 @@
         <h1>All Doctor Info here!</h1>
         <form method="post" action="/doctors">
             <label for="name">Full name:</label><br>
-            <input type="text" id="name" name="name" ><br>
+            <input type="text" id="name" name="name" required><br>
             <label for="field">Field:</label><br>
-            <input type="text" id="field" name="field" ><br>
+            <input type="text" id="field" name="field" required><br>
             <label for="contact">Contact Number:</label><br>
-            <input type="number" id="contact" name="contact" ><br><br>
+            <input type="number" id="contact" name="contact" required><br><br>
             <label for="schedule">Schedule: 0 For TTS, 1 For MWF</label><br>
-            <input type="number" id="schedule" name="schedule" ><br><br>
-            <label for="appointment">Free for Appointment: 0 mean Free, 1 means Not Free</label><br>
-            <input type="number" id="appointment" name="appointment" ><br><br>
+            <input type="number" id="schedule" name="schedule" required><br><br>
+            <label for="appointment">Free for Appointment: 0 mean Not Free, 1 means Free</label><br>
+            <input type="number" id="appointment" name="appointment" required ><br><br>
             <button>Add Doctor</button>
           </form> 
         <form method="get" action="/">
